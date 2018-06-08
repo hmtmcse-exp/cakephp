@@ -18,6 +18,7 @@ class ExperimentController extends AppController
         echo "<pre>";
         $countTableObject = TableRegistry::get("package")->find("all");
         $countTableObject->contain(['PackageFeature']);
+        print_r($countTableObject->sql());
         print_r($countTableObject->toList());
         die();
     }
